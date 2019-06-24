@@ -2,6 +2,13 @@ package lectures;
 
 public class Demo {
 
+	/** Always returns 0.  This is here as an example of a method;
+	 *  for now, ignore the "public".  The "int" is the return type of the method.
+	 *  "f" is the name of the method, and "x" is an argument to the method, and must be
+	 *  an "int".
+	 *  
+	 *  @param x an integer, which is ignored.
+	 */
 	public int f(int x) {
 		return 0;
 	}
@@ -33,15 +40,20 @@ public class Demo {
 		// primitive types
 		// ints
 		System.out.println("Max integer:" + Integer.MAX_VALUE);
+		
+		// Integers wrap around:
 		System.out.println(Integer.MAX_VALUE + 1);
 		
+		// bools
 		boolean z = true;
 		z = false;
 		System.out.println(true && false); // true AND false
 		System.out.println(true || false); // true OR false
 		
+		// doubles
 		double w = 3.14;
 		
+		// a char (for character) is a single symbol (letter, number, emoji, etc)
 		char t = 'a';
 		char t2 = '1';
 		// char t3 = 'hello';
