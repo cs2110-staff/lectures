@@ -17,12 +17,14 @@ public class Demo {
 	 * Demonstrates some basic features of Java.
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		// comment
 		/* 
 		everything here is a comment.
 		 */
+
+		// use Javadoc comments (starting with /**) for information that _users_ will need
+		// use inline comments  (starting with //)  for information that _implementors_ will need
+		
 		System.out.println("hello world");
 		System.out.println(3 + 4);
 		System.out.println(true);
@@ -58,11 +60,11 @@ public class Demo {
 		char t2 = '1';
 		// char t3 = 'hello';
 		
+		// types other than primitive types are Object types.  Operations on Object types
+		// are determined by their class.
 		String x_string = "hello";
 		Demo d = new Demo();
 	    int result_of_f = d.f(3);
-	    
-	    
 	}
 
 }
