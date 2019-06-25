@@ -1,4 +1,4 @@
-package lectures;
+package lecture1;
 
 public class Demo {
 
