@@ -2,6 +2,8 @@ package lecture3;
 
 public class Time {
 	
+	// Note: in a real program, I probably wouldn't use this representation.
+	
 	// class invariant: in range [0..60*24)
 	// class invariant: minutesSinceMidnight == 60*hour + minute;
 	private int minutesSinceMidnight;
