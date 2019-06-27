@@ -46,6 +46,7 @@ public class Time {
 	}
 	
 	/** Return a String representation of this, in the form HH:MM AM/PM */
+	// Note: you would usually call this toString but toString is a bit special; we'll talk about that later
 	public String asString() {
 		// Note: String.format is a useful function for putting data into strings
 		// See the Java API for more.
