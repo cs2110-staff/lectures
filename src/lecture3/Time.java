@@ -44,4 +44,14 @@ public class Time {
 		this.hour = h;
 		this.minutesSinceMidnight = this.minute() + 60*h;
 	}
+	
+	/** Return a String representation of this, in the form HH:MM AM/PM */
+	public String asString() {
+		// Note: String.format is a useful function for putting data into strings
+		// See the Java API for more.
+		if (this.hour < 12)
+			return String.format("%02d:%02d AM", this.hour, this.minute);
+		else
+			return String.format("%02d:%02d PM", this.hour - 12, this.minute);
+	}
 }
