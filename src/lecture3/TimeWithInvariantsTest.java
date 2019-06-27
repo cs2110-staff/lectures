@@ -5,11 +5,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 
 
-class TimeTest {
+class TimeWithInvariantsTest {
 
 	@Test
 	void test() {
-		TimeDemo t = new TimeDemo(3, 17);
+		TimeWithInvariants t = new TimeWithInvariants(3, 17);
 		//t.setMinute(17);
 		//check t.getMinute is 17
 		assertEquals(t.minutes(), 17);
