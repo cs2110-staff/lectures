@@ -2,10 +2,11 @@ package lecture4;
 
 import lecture3.NotImplementedError;
 
-public class SecondsTimeImpl extends lecture3.TimeDemo implements SecondsTime {
+public class SecondsTimeImpl extends lecture3.TimeWithInvariants implements SecondsTime {
 
 	/** initialize this to hold s seconds, m minutes, h hours. */
 	public SecondsTimeImpl(int s, int m, int h) {
+		super(m,h);
 		throw new NotImplementedError();
 	}
 
