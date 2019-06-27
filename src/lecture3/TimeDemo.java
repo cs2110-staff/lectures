@@ -1,6 +1,6 @@
 package lecture3;
 
-public class Time {
+public class TimeDemo {
 	
 	// Note: in a real program, I probably wouldn't use this representation.
 	
@@ -18,7 +18,7 @@ public class Time {
 	 * @param m the minutes, in [0..60)
 	 * @param h the hour, in [0..24)
 	 */
-	public Time(int m, int h) {
+	public TimeDemo(int m, int h) {
 		assert m >= 0 && m < 60;
 		assert h >= 0 && h < 24;
 		this.hour = h;
@@ -28,7 +28,7 @@ public class Time {
 	
 	// overloading: two methods with same name, different arg types
 	/** Initializes this to represent noon */
-	public Time() {
+	public TimeDemo() {
 		this.hour = 12;
 		this.minute = 0;
 		this.minutesSinceMidnight = 60*12;
