@@ -1,6 +1,6 @@
 package lecture3;
 
-public class TimeDemo {
+public class TimeDemo implements lecture4.Time {
 	
 	// Note: in a real program, I probably wouldn't use this representation.
 	
@@ -35,7 +35,7 @@ public class TimeDemo {
 	}
 	
 	/** return the minute within the hour, in [0..60) */
-	public int minute() {
+	public int minutes() {
 		return minutesSinceMidnight % 60;
 	}
 	
@@ -62,7 +62,7 @@ public class TimeDemo {
 	public void setHour(int h) {
 		assert h >= 0 && h < 24;
 		this.hour = h;
-		this.minutesSinceMidnight = this.minute() + 60*h;
+		this.minutesSinceMidnight = this.minutes() + 60*h;
 	}
 	
 	/** Return a String representation of this, in the form HH:MM AM/PM */
