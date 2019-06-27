@@ -14,6 +14,26 @@ public class Time {
 	// class invariant: in range [0..24)
 	private int hour;
 	
+	/** intialize this to represent the hour h and minute m.
+	 * @param m the minutes, in [0..60)
+	 * @param h the hour, in [0..24)
+	 */
+	public Time(int m, int h) {
+		assert m >= 0 && m < 60;
+		assert h >= 0 && h < 24;
+		this.hour = h;
+		this.minute = m;
+		this.minutesSinceMidnight = h*60 + m;
+	}
+	
+	// overloading: two methods with same name, different arg types
+	/** Initializes this to represent noon */
+	public Time() {
+		this.hour = 12;
+		this.minute = 0;
+		this.minutesSinceMidnight = 60*12;
+	}
+	
 	/** return the minute within the hour, in [0..60) */
 	public int minute() {
 		return minutesSinceMidnight % 60;
