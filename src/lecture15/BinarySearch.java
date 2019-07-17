@@ -48,8 +48,8 @@ public class BinarySearch<E> {
 	 */
 	public Pair binarySearch(ArrayList<E> a, E x, int start, int end) {
 		
-		// invariant:     start           i          j              end
-		//            a: [  sorted, < x  |  sorted  |  sorted, > x ]
+		// invariant:     start           i          j               end
+		//            a: [  sorted, < x  |  sorted  |  sorted, > x  ]
 		
 		int i = start, j = end;
 		// initialization: a[0..i) and a[j..length) are empty
