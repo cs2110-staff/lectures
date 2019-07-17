@@ -1,6 +1,12 @@
 package lecture16;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Arrays;
 import java.util.Comparator;
 
 import lecture3.NotImplementedError;
@@ -16,7 +22,7 @@ public class Sorting<E> {
 	}
 	
 	/** exchange a[i] and a[j] */
-	private void swap(ArrayList<E> a, int i, int j) {
+	private void swap(List<E> a, int i, int j) {
 		E tmp = a.get(i);
 		a.set(i, a.get(j));
 		a.set(j, tmp);
@@ -27,7 +33,7 @@ public class Sorting<E> {
 	 * Return < 0 if a[i] < a[j]; return = 0 if a[i] = a[j] and return
 	 * >0 if a[i] > a[j]
 	 */
-	private int compare(ArrayList<E> a, int i, int j) {
+	private int compare(List<E> a, int i, int j) {
 		return this.cmp.compare(a.get(i), a.get(j));
 	}
 	
@@ -42,7 +48,7 @@ public class Sorting<E> {
 	 *     0            length
 	 * a: [   sorted   ]
 	 */
-	public void insertionSort(ArrayList<E> a) {
+	public void insertionSort(List<E> a) {
 		// invariant:    0          i         length
 		//           a: [  sorted  |    ?    ]
 		
@@ -82,7 +88,7 @@ public class Sorting<E> {
 		// termination: length == i so a[0..length) is a[0..i) which is sorted
 	}
 	
-	void selectionSort(ArrayList<E> a) {
+	void selectionSort(List<E> a) {
 		// invariant:     0                           i         length
 		//            a: [ sorted, smaller then rest |    ?    ]
 		
@@ -100,7 +106,7 @@ public class Sorting<E> {
 	}
 	
 	/** returns index of the smallest value of a[start...end) */
-	public int indexOfMin(ArrayList<E> a, int start, int end) {
+	public int indexOfMin(List<E> a, int start, int end) {
 		// invariant:     start       min           i         end
 		//            a: [    >= x   | x |   >= x  |    ?    ]
 		
@@ -113,12 +119,74 @@ public class Sorting<E> {
 			//     start    min            i      end
 			// a: [  >= x  | x |  >= x  |?|   ?  ]
 			if (compare(a,i-1,min) < 0)
-				min = i;
+				min = i-1;
 			
 			// preservation: know that a[i-1] >= a[min]
 		}
 		// termination: i == end, so a[start..i) is a[start..end), and all
 		// values are >= x
 		return min;
+	}
+	
+	// Testing
+	
+	public static class Tests {
+		private Sorting<Integer> sorter() {
+			return new Sorting<Integer>(Comparator.naturalOrder());
+		}
+		
+		private static List<Integer> testCase() {
+			//                   0 1 2 3 4 5 6 7 8
+			return Arrays.asList(1,0,7,3,5,4,9,2,0);
+		}
+		
+		private static List<Integer> testCaseSorted() {
+			List<Integer> result = testCase();
+			result.sort(Comparator.naturalOrder());
+			return result;
+		}
+		
+		@Test
+		public void testSwap() {
+			Sorting<Integer> s = sorter();
+			List<Integer>    a = testCase();
+			
+			s.swap(a,1,2);
+			assertEquals(7,a.get(1));
+			assertEquals(0,a.get(2));
+		}
+		
+		@Test
+		public void testCompare() {
+			Sorting<Integer> s = sorter();
+			List<Integer>    a = testCase();
+
+			assertTrue(s.compare(a,0,1) > 0);
+			assertTrue(s.compare(a, 1, 8) == 0);
+			assertTrue(s.compare(a, 1, 0) < 0);
+		}
+		
+		@Test
+		public void testInsertionSort() {
+			Sorting<Integer> s = sorter();
+			List<Integer>    a = testCase();
+			s.insertionSort(a);
+			assertEquals(testCaseSorted(), a);
+		}
+		@Test
+		public void testIndexOfMin() {
+			Sorting<Integer> s = sorter();
+			List<Integer>    a = testCase();
+			
+			assertEquals(0, a.get(s.indexOfMin(a, 0, a.size())));
+			assertEquals(3, a.get(s.indexOfMin(a, 2, 5)));
+		}
+		@Test
+		public void testSelectionSort() {
+			Sorting<Integer> s = sorter();
+			List<Integer>    a = testCase();
+			s.selectionSort(a);
+			assertEquals(testCaseSorted(), a);			
+		}
 	}
 }
