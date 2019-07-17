@@ -101,6 +101,24 @@ public class Sorting<E> {
 	
 	/** returns index of the smallest value of a[start...end) */
 	public int indexOfMin(ArrayList<E> a, int start, int end) {
-		throw new NotImplementedError();
+		// invariant:     start       min           i         end
+		//            a: [    >= x   | x |   >= x  |    ?    ]
+		
+		int min = start, i = start+1;
+		// initialization: a[start..min) and a[min+1..i) are empty
+		
+		while (i < end) {
+			i++; // progress: i increasing
+			
+			//     start    min            i      end
+			// a: [  >= x  | x |  >= x  |?|   ?  ]
+			if (compare(a,i-1,min) < 0)
+				min = i;
+			
+			// preservation: know that a[i-1] >= a[min]
+		}
+		// termination: i == end, so a[start..i) is a[start..end), and all
+		// values are >= x
+		return min;
 	}
 }
