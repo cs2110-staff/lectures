@@ -50,4 +50,11 @@ public class InsertionSort<E> extends SortingStrategy<E> {
 		// termination: length == i so a[0..length) is a[0..i) which is sorted
 	}
 
+	public static class Tests extends SortingStrategy.Tests {
+		@Override
+		protected SortingStrategy<Integer> sorter() {
+			return new InsertionSort<Integer>(Comparator.naturalOrder());
+		}
+		
+	}
 }
