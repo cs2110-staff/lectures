@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import common.NotImplementedError;
 import common.SortingStrategy;
 
 public class Quicksort<E> extends SortingStrategy<E> {
