@@ -19,10 +19,19 @@ public class Quicksort<E> extends SortingStrategy<E> {
 
 	@Override
 	public void sort(List<E> a) {
-		// TODO Auto-generated method stub
-		throw new NotImplementedError();
+		quicksort(a,0,a.size());
 	}
-	
+
+	/** sort a[start..end) */
+	public void quicksort(List<E> a, int start, int end) {
+		if (end - start <= 1)
+			return;
+		
+		int mid = partition(a,start,end,start);
+		quicksort(a,start,mid);
+		quicksort(a,mid+1,end);
+	}
+
 	/**
 	 * Rearrange a[start..end) so that everything to the left of i is less than
 	 * a[i] and everything to the right of i is greater than a[i].
