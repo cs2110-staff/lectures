@@ -1,6 +1,6 @@
 package lecture4;
 
-import lecture3.NotImplementedError;
+import common.NotImplementedError;
 
 public class SecondsTimeImpl extends lecture3.TimeWithInvariants implements SecondsTime {
 

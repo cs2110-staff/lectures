@@ -1,4 +1,4 @@
-package lecture3;
+package common;
 
 public class NotImplementedError extends Error {
 

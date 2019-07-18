@@ -2,7 +2,7 @@ package lecture4;
 
 import java.time.LocalTime;
 
-import lecture3.NotImplementedError;
+import common.NotImplementedError;
 
 public class ClockTime implements Time {
 
