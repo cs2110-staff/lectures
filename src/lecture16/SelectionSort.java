@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import common.SortingStrategy;
+
 public class SelectionSort<E> extends SortingStrategy<E> {
 
 	protected SelectionSort(Comparator<E> cmp) {

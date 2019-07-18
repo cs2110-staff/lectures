@@ -1,4 +1,4 @@
-package lecture16;
+package lecture17;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,6 +8,8 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import common.SortingStrategy;
 
 public class MergeSort<E> extends SortingStrategy<E> {
 	

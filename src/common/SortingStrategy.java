@@ -1,4 +1,4 @@
-package lecture16;
+package common;
 
 import java.util.List;
 

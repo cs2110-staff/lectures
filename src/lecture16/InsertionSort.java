@@ -3,6 +3,8 @@ package lecture16;
 import java.util.Comparator;
 import java.util.List;
 
+import common.SortingStrategy;
+
 public class InsertionSort<E> extends SortingStrategy<E> {
 
 	protected InsertionSort(Comparator<E> cmp) {
