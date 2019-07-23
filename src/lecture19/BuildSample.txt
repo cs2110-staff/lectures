@@ -1,0 +1,24 @@
+		private Graph<Integer,Void> testCase() {
+			Graph<Integer,Void> result = new Graph<Integer,Void>();
+			Graph<Integer,Void>.Vertex v1 = result.new Vertex(1);
+			Graph<Integer,Void>.Vertex v2 = result.new Vertex(2);
+			Graph<Integer,Void>.Vertex v3 = result.new Vertex(3);
+			Graph<Integer,Void>.Vertex v4 = result.new Vertex(4);
+			Graph<Integer,Void>.Vertex v5 = result.new Vertex(5);
+			Graph<Integer,Void>.Vertex v6 = result.new Vertex(6);
+			Graph<Integer,Void>.Vertex v7 = result.new Vertex(7);
+			Graph<Integer,Void>.Vertex v8 = result.new Vertex(8);
+			
+			result.new Edge(null,v1,v2);
+			result.new Edge(null,v1,v7);
+			result.new Edge(null,v2,v3);
+			result.new Edge(null,v2,v5);
+			result.new Edge(null,v3,v3);
+			result.new Edge(null,v3,v5);
+			result.new Edge(null,v4,v5);
+			result.new Edge(null,v4,v6);
+			result.new Edge(null,v7,v8);
+			
+			return result;
+		}
+		
