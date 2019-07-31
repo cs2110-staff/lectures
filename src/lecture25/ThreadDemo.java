@@ -64,8 +64,17 @@ public class ThreadDemo {
 		@Override
 		public void run() {
 			for (int i = 0; i < 10000; i++) {
-				counter++;
+				increment();
 			}
+		}
+		
+		// only one thread in a synchronized block for a given object at a time
+		// (or if it's static, for a given class at a time).
+		public static synchronized void increment() {
+			int tmp = counter;
+			// really know for sure that tmp = old value of counter
+			// so tmp + 1 = old value + 1
+			counter = tmp + 1;
 		}
 	}
 	
