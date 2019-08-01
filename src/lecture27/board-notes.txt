@@ -1,0 +1,25 @@
+Window
+ - Menu
+    - File menu
+    - Edit menu
+    - Navigate
+    - ...
+ - Button bar
+    - New button
+    - ...
+ - Contents
+    - left area
+       - packages
+       - git
+       - junit
+    - center area
+    - bottom area
+    - right area
+ 
+ Components:
+  - parts that can be added to a gui
+  - can paint themselves, iterate over children, etc.
+  
+ Subclasses of component:
+  - Window, Button, Label, Panel (something containing other components)
+ 
