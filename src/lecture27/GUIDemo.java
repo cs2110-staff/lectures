@@ -4,7 +4,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
-public class GUIDemo {
+public class GUIDemo {	
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Hello world");
@@ -15,20 +15,20 @@ public class GUIDemo {
 		JPanel p = new JPanel();
 		p.setLayout(new BorderLayout());
 		
-		JLabel l = new JLabel("north");
-		p.add(l, BorderLayout.NORTH);
+		JLabel northLabel = new JLabel("north");
+		p.add(northLabel, BorderLayout.NORTH);
 		
-		JLabel l2 = new JLabel("west");
-		p.add(l2, BorderLayout.WEST);
+		JLabel westLabel = new JLabel("west");
+		p.add(westLabel, BorderLayout.WEST);
 		
-		JButton b = new JButton("center");
-		p.add(b, "Hello");
+		JLabel centerLabel = new JLabel("center");
+		p.add(centerLabel, BorderLayout.CENTER);
 		
-		JLabel l3 = new JLabel("south");
-		p.add(l3, BorderLayout.SOUTH);
+		JLabel southLabel = new JLabel("south");
+		p.add(southLabel, BorderLayout.SOUTH);
 		
-		JLabel l4 = new JLabel("east");
-		p.add(l4, BorderLayout.EAST);
+		JLabel eastLabel = new JLabel("east");
+		p.add(eastLabel, BorderLayout.EAST);
 		
 		frame.getContentPane().add(p);
 		
